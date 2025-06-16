@@ -38,6 +38,7 @@ def download_model(model):
 
     print(f'Downloading {model}...')
     url = f"https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-{model}"
+    print(url)
     r = requests.get(url, allow_redirects=True)
     os.makedirs(MODELS_DIR, exist_ok=True)
     with open(Path(MODELS_DIR).joinpath(model), 'wb') as f:
