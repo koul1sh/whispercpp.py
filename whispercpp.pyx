@@ -25,6 +25,8 @@ MODELS = {
     'ggml-small.bin': 'https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.bin',
     'ggml-medium.bin': 'https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-medium.bin',
     'ggml-large.bin': 'https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large.bin',
+    'ggml-turbo.bin': 'https://huggingface.co/ggerganov/whisper.cpp/blob/main/ggml-large-v3-turbo.bin',
+    
 }
 
 def model_exists(model):
