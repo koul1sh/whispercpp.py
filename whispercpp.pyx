@@ -25,7 +25,7 @@ MODELS = {
     'ggml-small.bin': 'https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.bin',
     'ggml-medium.bin': 'https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-medium.bin',
     'ggml-large.bin': 'https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large.bin',
-    'ggml-turbo.bin': 'https://huggingface.co/ggerganov/whisper.cpp/blob/main/ggml-large-v3-turbo.bin',
+    'ggml-large-v3-turbo.bin': 'https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-turbo.bin',
     
 }
 
@@ -37,7 +37,7 @@ def download_model(model):
         return
 
     print(f'Downloading {model}...')
-    url = MODELS[model]
+    url = f"https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-{model}.bin"
     r = requests.get(url, allow_redirects=True)
     os.makedirs(MODELS_DIR, exist_ok=True)
     with open(Path(MODELS_DIR).joinpath(model), 'wb') as f:
